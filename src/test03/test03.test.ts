@@ -1,5 +1,5 @@
 import { StydentType } from "./../test02/test02";
-import { addSkils, makeSrtudenActive, set11} from "./test03";
+import { addSkils, liveStudentInCitty, makeSrtudenActive, set11} from "./test03";
 
 let student: StydentType;
 
@@ -8,11 +8,11 @@ beforeEach(() => {
     id: 1,
     name: "lelka",
     age: 32,
-    iSAactive: true,
+    iSAactive:false,
     address: {
       streetTitle: "surganova",
       sitti: {
-        title: "Tyumen",
+        title: "Minsk",
         contryTitle: "Belaruse",
       },
     },
@@ -32,18 +32,26 @@ test("New tech skill should be added to student", () => {
   expect(student.technologes[3].id).toBeDefined();
 });
 
-test('student should be made active',() => {
+test('student should be made active boolean',() => {
 
-    // expect(student.iSAactive).toBe(false);
+    expect(student.iSAactive).toBe(false);
     makeSrtudenActive(student);
     expect(student.iSAactive).toBe(true);
   
 
 })
 
-test("student should be made active", () => {
-  // expect(student.address.sitti.title).toBe("Tyumen");
+test("student should be made active1", () => {
+  expect(student.address.streetTitle).toBe("surganova");
 
-  set11(student, "lenin");
-  expect(student.address.streetTitle).toBe("lenin");
+  set11(student, "leninskiy");
+  expect(student.address.streetTitle).toBe("leninskiy");
 });
+
+test("dous live student in citty",()=>{
+  let res = liveStudentInCitty(student,"Moskov")
+  let res1 = liveStudentInCitty(student,"Minsk")
+
+  expect(res).toBe(false)
+  expect(res1).toBe(true)
+})

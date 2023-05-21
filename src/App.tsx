@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 
+
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+  // const senese = 'hello my freand'
+  // const resalt = massiv(senese)
+
+  // console.log(resalt[0]==='hello'); 
+  // console.log(resalt[1]==='my');  
+  // console.log(resalt[2]==='freand');  
+   
+
+  return ( <div className="App"> 
+
+0
     </div>
   );
 }
+
 
 export default App;
